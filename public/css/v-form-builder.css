@@ -221,7 +221,7 @@
 .vue-form-builder .control-view-wrapper,
 .vue-form-renderer .control-view-wrapper {
     position: relative;
-    margin-top: 22px;
+    margin-top: 10px;
     padding-left: 0;
 }
 
