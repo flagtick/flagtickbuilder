@@ -1,11 +1,11 @@
 <template>
     <div class="sidebar">
-        <span class="close"
+        <span class="closeIcon"
               @click="close"
-              v-html="$form.getIcon('close', '24px', '24px', '#000')">
+              v-html="$form.getIcon('close', '20px', '20px', '#000')">
         </span>
 
-        <span class="full"
+        <span class="fullIcon"
               @click="full"
               v-html="$form.getIcon('full', '24px', '24px', '#000')">
         </span>

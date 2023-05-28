@@ -323,22 +323,21 @@
     border-left: 1px solid rgba(0, 0, 0, .3)
 }
 
-.vue-form-builder .sidebar .close {
+.vue-form-builder .sidebar .fullIcon {
     position: absolute;
     top: 8px;
     left: 8px;
-    transform: scale(0.875);
-    font-size: 16px;
+    font-size: 15px;
     margin-right: 50px;
     cursor: pointer;
 }
 
-.vue-form-builder .sidebar .full {
+.vue-form-builder .sidebar .closeIcon {
     position: absolute;
     top: 8px;
-    left: 46px;
-    font-size: 15px;
-    margin-right: 50px;
+    right: 8px;
+    margin-top: 2px;
+    font-size: 16px;
     cursor: pointer;
 }
 
@@ -965,6 +964,10 @@ html.md-theme-default .vue-form-builder .sidebar {
     right: 0;
     left: auto;
     background-color: #fff !important;
+}
+
+.vue-form-builder .sidebar::-webkit-scrollbar {
+    width: 0;
 }
 
 html.md-theme-default .vue-form-builder .sidebar a.md-list-item-action {
