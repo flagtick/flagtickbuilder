@@ -4,6 +4,7 @@
             <label>Text for Text-Block</label>
             <div id="app">
                 <vue-editor useCustomImageHandler @image-added="handleImageAdded"
+                            class="flagtick-vue2-editor"
                             v-model="control.text">
                 </vue-editor>
             </div>
