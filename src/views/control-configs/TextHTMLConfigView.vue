@@ -22,6 +22,36 @@
         components: {
             VueEditor
         },
+        mounted() {
+            new Promise(() => {
+                const stickyContainer = document.querySelector('#app .ql-toolbar');
+                const stickyMobile = stickyContainer.offsetTop;
+                const stickyDesktop = stickyContainer.offsetTop;
+
+                const stickyNav = () => {
+                    if (window.outerWidth <= 1024) {
+                        if (window.scrollY > stickyMobile) {
+                            stickyContainer.classList.add('isSticky');
+                        } else {
+                            stickyContainer.classList.remove('isSticky');
+                        }
+                    }
+                    if (window.outerWidth > 1025) {
+                        if (window.scrollY >= stickyDesktop) {
+                            stickyContainer.classList.add('isSticky');
+                        } else {
+                            stickyContainer.classList.remove('isSticky');
+                        }
+                    }
+                };
+
+                stickyNav();
+                window.addEventListener('scroll', () => {
+                    stickyNav();
+                });
+
+            });
+        },
         methods : {
             handleImageAdded: function(file, Editor, cursorLocation, resetUploader) {
                 const formData = new FormData();

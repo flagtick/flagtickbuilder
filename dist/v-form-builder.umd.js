@@ -1217,6 +1217,9 @@ var NAVIGATION_MORE_ICON = "\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=
 // CONCATENATED MODULE: ./src/libraries/icons/information-outline.icon.js
 var INFORMATION_OUTLINE_ICON = "\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" width=\"{0}\" height=\"{1}\" fill=\"{2}\">\n    <path d=\"M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z\"/>\n</svg>\n";
 
+// CONCATENATED MODULE: ./src/libraries/icons/navigation_drag.js
+var NAVIGATION_DRAG = "<svg xmlns=\"http://www.w3.org/2000/svg\"\n\t viewBox=\"0 0 20 20\" width=\"{0}\" height=\"{1}\" fill=\"{2}\" xml:space=\"preserve\">\n<path d=\"M30.9,34.3c0,1.8-2.2,2.5-3.2,1l-2-4.3c-1.1-1.9-3.5-2.3-5.3-1.1l-1.3,1l6.7,15.9c0.3,0.7,1,1.1,1.8,1.1\n\th17.6c0.9,0,1.6-0.6,1.8-1.4l3.1-11.1c0.8-3.1-1-6.1-3.8-7.2l-8-2.7C27,21.4,30.7,33.9,30.9,34.3z\"/>\n<rect x=\"1.8\" y=\"28.5\" width=\"5.8\" height=\"5.8\"/>\n<rect x=\"14.4\" y=\"4\" width=\"5.8\" height=\"5.8\"/>\n<rect x=\"14.4\" y=\"42\" width=\"5.8\" height=\"5.8\"/>\n<rect x=\"1.8\" y=\"15.8\" width=\"5.8\" height=\"5.8\"/>\n<rect x=\"1.8\" y=\"4.1\" width=\"5.8\" height=\"5.8\"/>\n<rect x=\"27.1\" y=\"4\" width=\"5.8\" height=\"5.8\"/>\n<rect x=\"39.8\" y=\"4\" width=\"5.8\" height=\"5.8\"/>\n<rect x=\"1.8\" y=\"42.1\" width=\"5.8\" height=\"5.8\"/>\n<rect x=\"39.8\" y=\"16.8\" width=\"5.8\" height=\"5.8\"/>\n</svg>";
+
 // CONCATENATED MODULE: ./src/libraries/icon-facade.js
 
 
@@ -1226,6 +1229,7 @@ var INFORMATION_OUTLINE_ICON = "\n<svg xmlns=\"http://www.w3.org/2000/svg\" view
  * @license From Zondicons of Steve Schoger. Thanks very much for the beautiful/lightweight icons
  * @iconHomePage https://www.zondicons.com/
  */
+
 
 
 
@@ -1249,7 +1253,7 @@ var ICONS = {
   trash: TRASH_ICON,
   chevronUp: CHEVRON_UP_ICON,
   chevronDown: CHEVRON_DOWN_ICON,
-  navigationMore: NAVIGATION_MORE_ICON,
+  navigationMore: NAVIGATION_DRAG,
   informationOutline: INFORMATION_OUTLINE_ICON
 };
 var FormIcon = {
@@ -10852,12 +10856,12 @@ var TextBlockConfigView_component = Object(componentNormalizer["a" /* default */
 )
 
 /* harmony default export */ var TextBlockConfigView = (TextBlockConfigView_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6a06d990-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/control-configs/TextHTMLConfigView.vue?vue&type=template&id=3c0528ca&
-var TextHTMLConfigViewvue_type_template_id_3c0528ca_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{class:_vm.styles.FORM.FORM_GROUP},[_c('label',[_vm._v("Text for Text-Block")]),_c('div',{attrs:{"id":"app"}},[_c('vue-editor',{staticClass:"flagtick-vue2-editor",attrs:{"useCustomImageHandler":""},on:{"image-added":_vm.handleImageAdded},model:{value:(_vm.control.text),callback:function ($$v) {_vm.$set(_vm.control, "text", $$v)},expression:"control.text"}})],1)])])}
-var TextHTMLConfigViewvue_type_template_id_3c0528ca_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6a06d990-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/control-configs/TextHTMLConfigView.vue?vue&type=template&id=53fc0be0&
+var TextHTMLConfigViewvue_type_template_id_53fc0be0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{class:_vm.styles.FORM.FORM_GROUP},[_c('label',[_vm._v("Text for Text-Block")]),_c('div',{attrs:{"id":"app"}},[_c('vue-editor',{staticClass:"flagtick-vue2-editor",attrs:{"useCustomImageHandler":""},on:{"image-added":_vm.handleImageAdded},model:{value:(_vm.control.text),callback:function ($$v) {_vm.$set(_vm.control, "text", $$v)},expression:"control.text"}})],1)])])}
+var TextHTMLConfigViewvue_type_template_id_53fc0be0_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/control-configs/TextHTMLConfigView.vue?vue&type=template&id=3c0528ca&
+// CONCATENATED MODULE: ./src/views/control-configs/TextHTMLConfigView.vue?vue&type=template&id=53fc0be0&
 
 // EXTERNAL MODULE: ./node_modules/vue2-editor/dist/vue2-editor.esm.js
 var vue2_editor_esm = __webpack_require__("5873");
@@ -10884,6 +10888,36 @@ var vue2_editor_esm = __webpack_require__("5873");
   mixins: [control_special_config_mixin["a" /* CONTROL_SPECIAL_CONFIG_MIXIN */]],
   components: {
     VueEditor: vue2_editor_esm["a" /* VueEditor */]
+  },
+  mounted: function mounted() {
+    new Promise(function () {
+      var stickyContainer = document.querySelector('#app .ql-toolbar');
+      var stickyMobile = stickyContainer.offsetTop;
+      var stickyDesktop = stickyContainer.offsetTop;
+
+      var stickyNav = function stickyNav() {
+        if (window.outerWidth <= 1024) {
+          if (window.scrollY > stickyMobile) {
+            stickyContainer.classList.add('isSticky');
+          } else {
+            stickyContainer.classList.remove('isSticky');
+          }
+        }
+
+        if (window.outerWidth > 1025) {
+          if (window.scrollY >= stickyDesktop) {
+            stickyContainer.classList.add('isSticky');
+          } else {
+            stickyContainer.classList.remove('isSticky');
+          }
+        }
+      };
+
+      stickyNav();
+      window.addEventListener('scroll', function () {
+        stickyNav();
+      });
+    });
   },
   methods: {
     handleImageAdded: function handleImageAdded(file, Editor, cursorLocation, resetUploader) {
@@ -10916,8 +10950,8 @@ var vue2_editor_esm = __webpack_require__("5873");
 
 var TextHTMLConfigView_component = Object(componentNormalizer["a" /* default */])(
   control_configs_TextHTMLConfigViewvue_type_script_lang_js_,
-  TextHTMLConfigViewvue_type_template_id_3c0528ca_render,
-  TextHTMLConfigViewvue_type_template_id_3c0528ca_staticRenderFns,
+  TextHTMLConfigViewvue_type_template_id_53fc0be0_render,
+  TextHTMLConfigViewvue_type_template_id_53fc0be0_staticRenderFns,
   false,
   null,
   null,

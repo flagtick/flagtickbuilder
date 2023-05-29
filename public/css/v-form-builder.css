@@ -228,14 +228,15 @@
 .vue-form-builder .control-option-container {
     position: absolute;
     top: 0;
-    left: 97%;
+    /** left: 97% */
+    right: 15px;
     border: 1px solid #bdc3c7;
     background-color:white;
     display: none;
 }
 
 .vue-form-builder .control-view-wrapper:hover .control-option-container {
-    display: block;
+    display: flex; /** block */
     z-index: 2;
 }
 

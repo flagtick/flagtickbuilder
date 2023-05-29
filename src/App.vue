@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <h1 class="text-center mt-2">Vue-Form-Builder @ v2.1.0 - Development-Preview</h1>
-        <p class="text-center">Presented by <strong>Seth (Sandaru) Phat</strong></p>
+        <p class="text-center">Presented by <strong>Flagtick Builder</strong></p>
         <h4 class="text-center mb-3">What you <strong>BUILD</strong> is what you <strong>GOT</strong>.</h4>
 
         <div class="col-md-12">
