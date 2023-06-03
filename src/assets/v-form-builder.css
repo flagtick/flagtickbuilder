@@ -237,6 +237,10 @@
     display: none;
 }
 
+.control-view-wrapper > .control-view > div > blockquote {
+    line-height: 1.6;
+}
+
 .vue-form-builder .control-view-wrapper:hover .control-option-container {
     display: flex; /** block */
     z-index: 2;
