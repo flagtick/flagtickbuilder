@@ -164,8 +164,8 @@
              */
             saveAndClose(runnerId, data) {
                 console.log("C");
-                console.log(runnerId);
                 console.log(data);
+                console.log(this.section.controls);
                 // does it out of scope? if it does, stop
                 if (runnerId !== this.section.uniqueId) {
                     return
