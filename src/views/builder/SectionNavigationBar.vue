@@ -153,7 +153,9 @@ export default {
                     return
                 }
 
-                let newValue = Object.assign({}, this.section, data)
+                let newValue = Object.assign({}, this.section, data);
+                console.log(newValue);
+                console.log(this.section.controls);
                 this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.SECTION.UPDATE, newValue)
             },
 
@@ -163,13 +165,6 @@ export default {
              * @param data
              */
             saveAndClose(runnerId, data) {
-                console.log("C");
-                console.log(data);
-                console.log(this.section.controls);
-
-                this.section.controls = [...new Set(this.section.controls)];
-                console.log(this.section.controls);
-
                 // does it out of scope? if it does, stop
                 if (runnerId !== this.section.uniqueId) {
                     return
@@ -185,12 +180,12 @@ export default {
             }
         },
 
-        // created() {
-        //     // listen to after-closed from GlobalSidebar
-        //     this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.SAVE, this.saveConfiguration)
-        //     this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.SAVE_AND_CLOSE, this.saveAndClose)
-        //     this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.AFTER_CLOSED, this.removeActive)
-        //     this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.OPENED, this.configurationOpened)
-        // }
+        created() {
+            // listen to after-closed from GlobalSidebar
+            this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.SAVE, this.saveConfiguration)
+            this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.SAVE_AND_CLOSE, this.saveAndClose)
+            this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.AFTER_CLOSED, this.removeActive)
+            this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.OPENED, this.configurationOpened)
+        }
     }
 </script>
