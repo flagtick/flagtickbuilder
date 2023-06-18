@@ -51,14 +51,14 @@
 </template>
 
 <script>
-    import {SECTION_SORT_MIXINS} from "@/mixins/section-sort-mixins";
-    import {STYLE_INJECTION_MIXIN} from "@/mixins/style-injection-mixin";
-    import {EVENT_CONSTANTS} from "@/configs/events";
-    import {SECTION_TYPES} from "@/configs/section";
-    import SidebarRenderer from "@/libraries/sidebar-renderer.class";
-    import SidebarSectionConfiguration from "@/views/builder/sidebar-config-views/SidebarSectionConfiguration";
+import {SECTION_SORT_MIXINS} from "@/mixins/section-sort-mixins";
+import {STYLE_INJECTION_MIXIN} from "@/mixins/style-injection-mixin";
+import {EVENT_CONSTANTS} from "@/configs/events";
+import {SECTION_TYPES} from "@/configs/section";
+import SidebarRenderer from "@/libraries/sidebar-renderer.class";
+import SidebarSectionConfiguration from "@/views/builder/sidebar-config-views/SidebarSectionConfiguration";
 
-    export default {
+export default {
         name: "SectionNavigationBar",
         mixins: [SECTION_SORT_MIXINS, STYLE_INJECTION_MIXIN],
         props: {
@@ -166,6 +166,10 @@
                 console.log("C");
                 console.log(data);
                 console.log(this.section.controls);
+
+                this.section.controls = [...new Set(this.section.controls)];
+                console.log(this.section.controls);
+
                 // does it out of scope? if it does, stop
                 if (runnerId !== this.section.uniqueId) {
                     return
