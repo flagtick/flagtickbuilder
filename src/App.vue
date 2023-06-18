@@ -3,7 +3,6 @@
         <br><br>
 
         <div class="col-md-12">
-            <button class="btn btn-info mr-2" @click="getData">Get JSON Form-Data (Console / Builder)</button>
             <button class="btn btn-info mr-2" @click="createBlank">Create Blank Form (Builder)</button>
 
             <button class="btn btn-info mr-2" @click="viewRenderer">
@@ -74,9 +73,6 @@
             readOnly: false,
         }),
         methods: {
-            getData() {
-                console.log(JSON.stringify(this.formData))
-            },
 
             createBlank() {
                 this.formData = Object.assign({})

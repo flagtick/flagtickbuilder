@@ -163,11 +163,13 @@
              * @param data
              */
             saveAndClose(runnerId, data) {
+                console.log("C");
+                console.log(runnerId);
+                console.log(data);
                 // does it out of scope? if it does, stop
                 if (runnerId !== this.section.uniqueId) {
                     return
                 }
-
                 this.saveConfiguration(runnerId, data)
             },
 

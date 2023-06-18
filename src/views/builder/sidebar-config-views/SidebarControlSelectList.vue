@@ -51,9 +51,7 @@
                 }
 
                 // create
-                console.log(controlKey);
                 this.newControlData = createControlData(controlKey)
-                console.log(this.newControlData);
                 this.save(true)
             }
         }
