@@ -8,8 +8,13 @@
                 v-show="!controlInfo.isHidden"
                 @click="selectedControl(controlKey)"
             >
-                <p class="type-headline" v-text="controlInfo.name"></p>
-                <p class="type-desc" v-text="controlInfo.description"></p>
+                <span class="icon">
+                    <component :is="loadIcons" :elementIcon="controlInfo.slug"/>
+                </span>
+                <div class="control-container-detail">
+                    <p class="type-headline" v-text="controlInfo.name"></p>
+                    <p class="type-desc" v-text="controlInfo.description"></p>
+                </div>
             </a>
         </div>
     </div>
@@ -20,19 +25,20 @@
     import {STYLE_INJECTION_MIXIN} from "@/mixins/style-injection-mixin";
     import {CONTROLS, createControlData} from "@/configs/controls";
     import {SIDEBAR_BODY_MIXIN} from "@/mixins/sidebar-body-mixin";
+    import SidebarControlIconList from "./SidebarControlIconList";
 
     export default {
         name: "SidebarControlSelectList",
         mixins: [STYLE_INJECTION_MIXIN, SIDEBAR_BODY_MIXIN],
         computed: {
-            controlTypes: () => CONTROLS
+            controlTypes: () => CONTROLS,
+            loadIcons: () => SidebarControlIconList,
         },
 
         data:() => ({
             dataKey: "newControlData",
             newControlData: null
         }),
-
         methods: {
             /**
              * Selected a control => we will generate a new control data then emit it to the section
@@ -45,7 +51,9 @@
                 }
 
                 // create
+                console.log(controlKey);
                 this.newControlData = createControlData(controlKey)
+                console.log(this.newControlData);
                 this.save(true)
             }
         }
@@ -63,25 +71,36 @@
     .grid-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        background-color: #fff;
         grid-gap: 20px;
-        margin-top: 24px;
+    }
+
+    .control-container-detail {
+        margin-left: 16px;
     }
 
     .grid-item {
-        background-color: #fff;
+        background: #f5f5f5;
         padding: 20px;
         border-radius: 5px;
+        display: flex;
+        text-decoration: none;
+        align-items: center;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .type-headline {
         font-size: 16px;
+        margin: 0;
+        color: #0473AA;
         font-weight: bold;
+        text-align: left;
     }
 
     .type-desc {
         font-size: 14px;
-        margin-top: 5px;
-        color: #777;
+        margin: 5px 0 0;
+        text-align: left;
+        color: #999;
     }
 </style>

@@ -2,12 +2,12 @@
     <div class="sidebar">
         <span class="closeIcon"
               @click="close"
-              v-html="$form.getIcon('close', '20px', '20px', '#000')">
+              v-html="$form.getIcon('close', '20px', '20px', '#FFF')">
         </span>
 
         <span class="fullIcon"
               @click="full"
-              v-html="$form.getIcon('full', '24px', '24px', '#000')">
+              v-html="$form.getIcon('full', '20px', '20px', '#FFF')">
         </span>
 
         <!--- For dynamic purpose --->
@@ -28,7 +28,8 @@
 <script>
 import {EVENT_CONSTANTS} from "@/configs/events";
 
-const SIDEBAR_FULL_SCREEN = "100%"
+const SIDEBAR_WIDTH_SIZE = "300px";
+const SIDEBAR_FULL_SCREEN = "100%";
 
 export default {
     name: "GlobalSidebar",
@@ -57,24 +58,29 @@ export default {
             }
 
             const sidebarElement = document.querySelector('.sidebar');
+            const configElement = document.querySelector('.sidebar-form-configuration');
 
-            sidebarElement.style.height = '80%';
-            sidebarElement.style.width = '80%';
-            sidebarElement.style.margin = '48px 10% 10% 10%';
-            sidebarElement.style.position = 'fixed';
-            sidebarElement.style.zIndex = '1';
-            sidebarElement.style.top = '0';
-            sidebarElement.style.left = '0';
-            sidebarElement.style.backgroundColor = '#0473aa';
-            sidebarElement.style.display = 'flex';
-            sidebarElement.style.alignItems = 'center';
-            sidebarElement.style.justifyContent = 'center';
-            sidebarElement.style.transition = '0.5s';
-            sidebarElement.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.3)';
+            const pattern = /^add-control-/;
+            if (pattern.test(runnerId)) {
+                sidebarElement.style.height = '80%';
+                sidebarElement.style.width = '80%';
+                sidebarElement.style.margin = '48px 10% 10% 10%';
+                sidebarElement.style.position = 'fixed';
+                sidebarElement.style.zIndex = '111';
+                sidebarElement.style.top = '0';
+                sidebarElement.style.left = '0';
+                sidebarElement.style.backgroundColor = '#0473aa';
+                sidebarElement.style.display = 'flex';
+                sidebarElement.style.alignItems = 'center';
+                sidebarElement.style.justifyContent = 'center';
+                sidebarElement.style.transition = '0.5s';
+                sidebarElement.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.3)';
 
-            // this.$el.style.width = SIDEBAR_WIDTH_SIZE
-            // document.getElementsByTagName("body")[0].style.marginRight = SIDEBAR_WIDTH_SIZE
-
+            } else {
+                this.$el.style.width = SIDEBAR_WIDTH_SIZE;
+                this.$el.style.backgroundColor = '#0473aa';
+                document.getElementsByTagName("body")[0].style.marginRight = SIDEBAR_WIDTH_SIZE;
+            }
             this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.SIDEBAR.OPENED, runnerId)
             this.isOpen = true
         },
@@ -124,6 +130,11 @@ export default {
             sidebarElement.style.transition = '';
             sidebarElement.style.boxShadow = '';
 
+            const pattern = /^add-control-/;
+            if (!pattern.test(this.runnerId)) {
+                this.$el.style.width = 0;
+                document.getElementsByTagName("body")[0].style.marginRight = 0;
+            }
 
             this.$formEvent.$emit(
                 EVENT_CONSTANTS.BUILDER.SIDEBAR.AFTER_CLOSED,
@@ -156,6 +167,14 @@ export default {
             this.dynamicData = Object.assign({}, rendererInfo.data)
             this.component = rendererInfo.component
             this.runnerId = rendererInfo.runnerId
+        }
+    },
+
+    beforeDestroy() {
+        const pattern = /^add-control-/;
+        if (!pattern.test(this.runnerId)) {
+            this.$el.style.width = 0;
+            document.getElementsByTagName("body")[0].style.marginRight = 0;
         }
     },
 

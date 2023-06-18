@@ -24,6 +24,7 @@ const CONTROLS = {
 
     label: {
         name: "Label",
+        slug: "label",
         description: "Simple label text show up in your Form",
         disableValue: true,
 
@@ -40,6 +41,7 @@ const CONTROLS = {
 
     downloadLink: {
         name: "Download Link",
+        slug: "download-link",
         description: "Download Link for your own purpose",
         disableValue: true,
 
@@ -58,6 +60,7 @@ const CONTROLS = {
 
     button: {
         name: "Button",
+        slug: "button",
         description: "Simple button for your own purpose",
         disableValidation: true,
         disableValue: true,
@@ -80,6 +83,7 @@ const CONTROLS = {
 
     emptyBlock: {
         name: "Empty Block",
+        slug: "empty-block",
         description: "Empty block to design your section/row.",
         disableValidation: true,
         disableValue: true,
@@ -93,6 +97,7 @@ const CONTROLS = {
 
     textBlock: {
         name: "Text Block",
+        slug: "text-block",
         description: "Block with text only (without any controls)",
         disableValidation: true,
         disableValue: true,
@@ -107,6 +112,7 @@ const CONTROLS = {
 
     textHTML: {
         name: "Text HTML",
+        slug: "text-html",
         description: "Block with text only (without any controls)",
         disableValidation: true,
         disableValue: true,
@@ -121,6 +127,7 @@ const CONTROLS = {
 
     video: {
         name: "Video",
+        slug: "video",
         description: "Video for your own purpose",
         disableValue: true,
 
@@ -136,10 +143,10 @@ const CONTROLS = {
 };
 
 const CONTROL_DEFAULT_DATA = {
-    // default configuration
-    'uniqueId': '', // :id
-    'type': '', // control type...
-    'name': '', // :name
+    'uniqueId': '',
+    'type': '',
+    'name': '',
+    'slug': '',
 
     'label': '',
     'subLabel': '',
@@ -161,7 +168,6 @@ const CONTROL_DEFAULT_DATA = {
      */
     'validations': [],
 
-    // data of the others - coming up later
 };
 
 /**
@@ -174,6 +180,7 @@ function createControlData(controlKey) {
 
     // set default data
     newData.label = CONTROLS[controlKey].name
+    newData.slug = CONTROLS[controlKey].slug
     newData.type = controlKey
 
     // unique ID is a must - I used UUIDv4 => 99% Unique

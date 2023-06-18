@@ -303,7 +303,9 @@
 **********************************/
 
 .vue-form-builder .sidebar {
-    height: 100%;
+    /*height: auto;*/
+    max-height: 100%;
+    overflow: auto;
     width: 0;
     position: fixed;
     z-index: 1;
@@ -313,7 +315,6 @@
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
-    border-left: 1px solid rgba(0, 0, 0, .3)
 }
 
 .vue-form-builder .sidebar .fullIcon {
@@ -347,7 +348,7 @@ body {
 }
 
 .vue-form-builder .sidebar-form-configuration {
-    padding: 0 15px 15px;
+    background: white;
 }
 
 .vue-form-builder .sidebar-form-configuration .buttons {
