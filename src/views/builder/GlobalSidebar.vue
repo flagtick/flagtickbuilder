@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar">
+    <div class="sidebar-builder">
         <span class="closeIcon"
               @click="close"
               v-html="$form.getIcon('close', '20px', '20px', '#FFF')">
@@ -59,7 +59,7 @@ export default {
                 return
             }
 
-            const sidebarElement = document.querySelector('.sidebar');
+            const sidebarElement = document.querySelector('.sidebar-builder');
             const configElement = document.querySelector('.sidebar-form-configuration');
 
             const pattern = /^add-control-/;
@@ -118,7 +118,7 @@ export default {
          * @hook After Closed - Fire an Event to notify (maybe someone will listen :v )
          */
         close() {
-            const sidebarElement = document.querySelector('.sidebar');
+            const sidebarElement = document.querySelector('.sidebar-builder');
             sidebarElement.style.height = '';
             sidebarElement.style.width = '';
             sidebarElement.style.margin = '';

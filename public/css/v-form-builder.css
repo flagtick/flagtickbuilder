@@ -307,7 +307,7 @@
 * SIDEBAR CLASS
 **********************************/
 
-.vue-form-builder .sidebar {
+.vue-form-builder .sidebar-builder {
     height: 100%;
     width: 0;
     position: fixed;
@@ -320,7 +320,7 @@
     transition: 0.5s;
 }
 
-.vue-form-builder .sidebar .close {
+.vue-form-builder .sidebar-builder .close {
     position: absolute;
     top: 5px;
     left: 15px;

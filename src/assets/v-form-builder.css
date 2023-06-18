@@ -302,7 +302,7 @@
 * SIDEBAR CLASS
 **********************************/
 
-.vue-form-builder .sidebar {
+.vue-form-builder .sidebar-builder {
     /*height: auto;*/
     max-height: 100%;
     overflow: auto;
@@ -317,7 +317,7 @@
     transition: 0.5s;
 }
 
-.vue-form-builder .sidebar .fullIcon {
+.vue-form-builder .sidebar-builder .fullIcon {
     position: absolute;
     top: 18px;
     left: 16px;
@@ -326,7 +326,7 @@
     cursor: pointer;
 }
 
-.vue-form-builder .sidebar .closeIcon {
+.vue-form-builder .sidebar-builder .closeIcon {
     position: absolute;
     top: 16px;
     right: 16px;
@@ -960,7 +960,7 @@ html.md-theme-default .vue-form-builder .section-container {
     color: #fff !important;
 }
 
-html.md-theme-default .vue-form-builder .sidebar {
+html.md-theme-default .vue-form-builder .sidebar-builder {
     z-index: 5;
     right: 0;
     left: auto;
@@ -971,13 +971,13 @@ html.md-theme-default .vue-form-builder .sidebar {
     width: 0;
 }
 
-html.md-theme-default .vue-form-builder .sidebar a.md-list-item-action {
+html.md-theme-default .vue-form-builder .sidebar-builder a.md-list-item-action {
     width: 100%;
     color: #495057 !important;
     text-align: inherit;
 }
 
-html.md-theme-default .vue-form-builder .sidebar .close {
+html.md-theme-default .vue-form-builder .sidebar-builder .close {
     z-index: 6;
 }
 
@@ -997,7 +997,7 @@ html.md-theme-default .vue-form-builder .md-list-item {
 }
 
 @media (max-width: 768px) {
-    html.md-theme-default .vue-form-builder .sidebar {
+    html.md-theme-default .vue-form-builder .sidebar-builder {
         right: 60%;
     }
 }
