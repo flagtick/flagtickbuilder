@@ -1,26 +1,20 @@
 <template>
     <div class="sidebar-form-configuration">
-
-        <h5>Add Control to your Section</h5>
-
-
-        <div :class="[styles.LIST_GROUP.CONTAINER]">
-
-            <a href="javascript:void(0)"
-               :class="styles.LIST_GROUP.SINGLE_ITEM"
-               v-for="(controlInfo, controlKey) in controlTypes"
-               v-show="!controlInfo.isHidden"
-               @click="selectedControl(controlKey)">
-
+        <div class="grid-container">
+            <a
+                href="javascript:void(0)"
+                class="grid-item"
+                v-for="(controlInfo, controlKey) in controlTypes"
+                v-show="!controlInfo.isHidden"
+                @click="selectedControl(controlKey)"
+            >
                 <p class="type-headline" v-text="controlInfo.name"></p>
                 <p class="type-desc" v-text="controlInfo.description"></p>
-
             </a>
-
         </div>
-
     </div>
 </template>
+
 
 <script>
     import {STYLE_INJECTION_MIXIN} from "@/mixins/style-injection-mixin";
@@ -60,4 +54,34 @@
 
 <style scoped>
 
+    .sidebar-form-configuration {
+        width: 100%;
+        height: 100%;
+        background: white;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+        margin-top: 24px;
+    }
+
+    .grid-item {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .type-headline {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .type-desc {
+        font-size: 14px;
+        margin-top: 5px;
+        color: #777;
+    }
 </style>

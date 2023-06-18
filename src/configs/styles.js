@@ -35,8 +35,8 @@ const STYLES = {
      * List Group Classes - Used in AddSectionVueControl
      */
     LIST_GROUP: {
-        CONTAINER: "list-group md-list", // div.list-group
-        SINGLE_ITEM: "list-group-item list-group-item-action md-list-item md-list-item-action", //a[href=...].list-group-item.list-group-item-action
+        CONTAINER: "list-group md-list",
+        SINGLE_ITEM: "list-group-item list-group-item-action md-list-item md-list-item-action",
     },
 
     /**

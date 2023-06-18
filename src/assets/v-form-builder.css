@@ -318,8 +318,8 @@
 
 .vue-form-builder .sidebar .fullIcon {
     position: absolute;
-    top: 8px;
-    left: 8px;
+    top: 18px;
+    left: 16px;
     font-size: 15px;
     margin-right: 50px;
     cursor: pointer;
@@ -327,8 +327,8 @@
 
 .vue-form-builder .sidebar .closeIcon {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 16px;
+    right: 16px;
     margin-top: 2px;
     font-size: 16px;
     cursor: pointer;

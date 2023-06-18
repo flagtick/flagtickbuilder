@@ -26,123 +26,145 @@
 </template>
 
 <script>
-    import {EVENT_CONSTANTS} from "@/configs/events";
-    import {ALERT_DIALOG} from "@/libraries/alert-dialog";
+import {EVENT_CONSTANTS} from "@/configs/events";
 
-    const SIDEBAR_WIDTH_SIZE = "300px"
-    const SIDEBAR_FULL_SCREEN = "100%"
+const SIDEBAR_FULL_SCREEN = "100%"
 
-    export default {
-        name: "GlobalSidebar",
-        props: {
-            formData: {
-                type: Object,
-                default() {
-                    return {}
-                }
-            },
-            permissions: Object
-        },
-        data: () => ({
-            component: null,
-            dynamicData: {},
-            runnerId: null,
-            isOpen: false,
-        }),
-        methods: {
-            /**
-             * Open the Right Sidebar
-             */
-            open(runnerId) {
-                if (this.isOpen) {
-                    ALERT_DIALOG.show('Please close the current active sidebar before open another')
-                    return
-                }
-
-                // set size
-                this.$el.style.width = SIDEBAR_WIDTH_SIZE
-                document.getElementsByTagName("body")[0].style.marginRight = SIDEBAR_WIDTH_SIZE
-
-                // turn on flag and notify watcher that sidebar is opened
-                // `runnerId` will be sent back in order to make sure other components will touch yours
-                this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.SIDEBAR.OPENED, runnerId)
-                this.isOpen = true
-            },
-
-            /**
-             * Save - Emitting data to the listener but do not close the sidebar
-             * @hook Emit Data to the Listener
-             */
-            save(specialData = {}) {
-                this.$formEvent.$emit(
-                    EVENT_CONSTANTS.BUILDER.SIDEBAR.SAVE,
-                    this.runnerId,
-                    Object.assign({}, specialData)
-                )
-            },
-
-            /**
-             * Save event with close the right sidebar
-             */
-            saveAndClose(specialData = {}) {
-                this.$formEvent.$emit(
-                    EVENT_CONSTANTS.BUILDER.SIDEBAR.SAVE_AND_CLOSE,
-                    this.runnerId,
-                    Object.assign({}, specialData)
-                )
-
-                this.close()
-            },
-
-            /**
-             * Close the right sidebar
-             * @hook After Closed - Fire an Event to notify (maybe someone will listen :v )
-             */
-            close() {
-                this.$el.style.width = 0
-                document.getElementsByTagName("body")[0].style.marginRight = 0
-
-                // fire event after closed (if emit == true)
-                this.$formEvent.$emit(
-                    EVENT_CONSTANTS.BUILDER.SIDEBAR.AFTER_CLOSED,
-                    this.runnerId,
-                    null
-                )
-
-                // remove renderer
-                this.component = null
-                this.dynamicData = {}
-                this.runnerId = null
-                this.isOpen = false
-            },
-
-            full() {
-                // set size
-                this.$el.style.width = SIDEBAR_FULL_SCREEN
-                this.$el.style.zIndex = 112
-            },
-
-            /**
-             * This method will help us inject our Component into the Sidebar Body
-             * @param {SidebarRenderer} rendererInfo - data that will be assigned for the Component
-             */
-            updateBody(rendererInfo) {
-                if (this.isOpen) {
-                    return
-                }
-
-                this.dynamicData = Object.assign({}, rendererInfo.data)
-                this.component = rendererInfo.component
-                this.runnerId = rendererInfo.runnerId
+export default {
+    name: "GlobalSidebar",
+    props: {
+        formData: {
+            type: Object,
+            default() {
+                return {}
             }
         },
+        permissions: Object
+    },
+    data: () => ({
+        component: null,
+        dynamicData: {},
+        runnerId: null,
+        isOpen: false,
+    }),
+    methods: {
+        /**
+         * Open the Right Sidebar
+         */
+        open(runnerId) {
+            if (this.isOpen) {
+                return
+            }
 
-        created() {
-            // listen to render even
-            this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.INJECT, this.updateBody)
+            const sidebarElement = document.querySelector('.sidebar');
 
-            // listen to open
-            this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.OPEN, this.open)
+            sidebarElement.style.height = '80%';
+            sidebarElement.style.width = '80%';
+            sidebarElement.style.margin = '48px 10% 10% 10%';
+            sidebarElement.style.position = 'fixed';
+            sidebarElement.style.zIndex = '1';
+            sidebarElement.style.top = '0';
+            sidebarElement.style.left = '0';
+            sidebarElement.style.backgroundColor = '#0473aa';
+            sidebarElement.style.display = 'flex';
+            sidebarElement.style.alignItems = 'center';
+            sidebarElement.style.justifyContent = 'center';
+            sidebarElement.style.transition = '0.5s';
+            sidebarElement.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.3)';
+
+            // this.$el.style.width = SIDEBAR_WIDTH_SIZE
+            // document.getElementsByTagName("body")[0].style.marginRight = SIDEBAR_WIDTH_SIZE
+
+            this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.SIDEBAR.OPENED, runnerId)
+            this.isOpen = true
+        },
+
+        /**
+         * Save - Emitting data to the listener but do not close the sidebar
+         * @hook Emit Data to the Listener
+         */
+        save(specialData = {}) {
+            this.$formEvent.$emit(
+                EVENT_CONSTANTS.BUILDER.SIDEBAR.SAVE,
+                this.runnerId,
+                Object.assign({}, specialData)
+            )
+        },
+
+        /**
+         * Save event with close the right sidebar
+         */
+        saveAndClose(specialData = {}) {
+            this.$formEvent.$emit(
+                EVENT_CONSTANTS.BUILDER.SIDEBAR.SAVE_AND_CLOSE,
+                this.runnerId,
+                Object.assign({}, specialData)
+            )
+
+            this.close()
+        },
+
+        /**
+         * Close the right sidebar
+         * @hook After Closed - Fire an Event to notify (maybe someone will listen :v )
+         */
+        close() {
+            const sidebarElement = document.querySelector('.sidebar');
+            sidebarElement.style.height = '';
+            sidebarElement.style.width = '';
+            sidebarElement.style.margin = '';
+            sidebarElement.style.position = '';
+            sidebarElement.style.zIndex = '';
+            sidebarElement.style.top = '';
+            sidebarElement.style.left = '';
+            sidebarElement.style.backgroundColor = '';
+            sidebarElement.style.display = '';
+            sidebarElement.style.alignItems = '';
+            sidebarElement.style.justifyContent = '';
+            sidebarElement.style.transition = '';
+            sidebarElement.style.boxShadow = '';
+
+
+            this.$formEvent.$emit(
+                EVENT_CONSTANTS.BUILDER.SIDEBAR.AFTER_CLOSED,
+                this.runnerId,
+                null
+            )
+
+            // remove renderer
+            this.component = null
+            this.dynamicData = {}
+            this.runnerId = null
+            this.isOpen = false
+        },
+
+        full() {
+            // set size
+            this.$el.style.width = SIDEBAR_FULL_SCREEN
+            this.$el.style.zIndex = 112
+        },
+
+        /**
+         * This method will help us inject our Component into the Sidebar Body
+         * @param {SidebarRenderer} rendererInfo - data that will be assigned for the Component
+         */
+        updateBody(rendererInfo) {
+            if (this.isOpen) {
+                return
+            }
+
+            this.dynamicData = Object.assign({}, rendererInfo.data)
+            this.component = rendererInfo.component
+            this.runnerId = rendererInfo.runnerId
         }
+    },
+
+    created() {
+        // listen to render even
+        this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.INJECT, this.updateBody)
+
+        // listen to open
+        this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.OPEN, this.open)
     }
+}
 </script>
