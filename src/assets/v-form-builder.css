@@ -1323,3 +1323,12 @@ html.md-theme-default .vue-form-builder .md-list-item {
     from {top: -300px; opacity: 0}
     to {top: 0; opacity: 1}
 }
+
+.section-config {
+    top: -4px !important;
+    right: 16px !important;
+}
+
+.md-raised {
+    padding-top: 3px;
+}

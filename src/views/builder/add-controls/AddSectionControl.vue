@@ -21,7 +21,6 @@
 </template>
 
 <script>
-    import {STYLES} from "@/configs/styles";
     import {SECTION_TYPES} from "@/configs/section";
     import {STYLE_INJECTION_MIXIN} from "@/mixins/style-injection-mixin";
 

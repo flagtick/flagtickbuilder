@@ -98,12 +98,12 @@ function createNewSection(type, sortOrder = 0) {
         throw new TypeError(`Section Type: ${type} doesn't exists in Vue-Form-Builder`);
     }
 
-    // create new section data base on the default data
+    // create new section database on the default data
     let newSectionData = HELPER.cloneDeep(SECTION_DEFAULT_DATA)
     newSectionData.type = type
     newSectionData.uniqueId = "section-" + HELPER.getUUIDv4()
-    newSectionData.headline = "New Section"
-    newSectionData.subHeadline = "This is the sub-headline of the new section"
+    newSectionData.headline = ""
+    newSectionData.subHeadline = ""
     newSectionData.sortOrder = sortOrder
 
     return newSectionData;

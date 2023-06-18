@@ -30,7 +30,6 @@
                 :disabled="!permissions.canEditSection"
             >
                 <span v-html="$form.getIcon('cog')"></span>
-                <span>Configuration</span>
             </button>
 
             <button
@@ -39,7 +38,6 @@
                 :disabled="!permissions.canDeleteSection"
             >
                 <span v-html="$form.getIcon('trash')"></span>
-                <span>Delete</span>
             </button>
 
             <component
