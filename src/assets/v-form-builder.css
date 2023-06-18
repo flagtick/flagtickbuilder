@@ -9,10 +9,6 @@
     padding-bottom: 5px;
 }
 
-.pbottom-10 {
-    padding-bottom: 10px;
-}
-
 .pl-15 {
     padding-left: 15px;
 }
@@ -73,14 +69,6 @@
 
 .vue-form-builder .add-section-container:hover {
     cursor: pointer;
-}
-
-.vue-form-builder .add-section-container>p {
-    margin: 0;
-}
-
-.vue-form-builder .add-section-container:hover>p {
-    font-weight: bold;
 }
 
 .vue-form-builder .add-container-list {

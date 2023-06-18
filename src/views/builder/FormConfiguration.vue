@@ -1,5 +1,5 @@
 <template>
-    <div class="form-configuration-block pbottom-10">
+    <div class="form-configuration-block">
         <button
             :class="styles.BUTTON.INFO"
             @click="open"

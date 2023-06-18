@@ -9,12 +9,12 @@ import {ARROW_DOWN_ICON} from "@/libraries/icons/arrow-down.icon";
 import {EDIT_PENCIL_ICON} from "@/libraries/icons/edit-pencil.icon";
 import {COG_ICON} from "@/libraries/icons/cog.icon";
 import {ADD_OUTLINE_ICON} from "@/libraries/icons/add-outline.icon";
+import {ADD_SECTION_ICON} from "@/libraries/icons/add-section.icon";
 import {CLOSE_ICON} from "@/libraries/icons/close.icon";
 import {FULL_ICON} from "@/libraries/icons/full.icon";
 import {TRASH_ICON} from "@/libraries/icons/trash.icon";
 import {CHEVRON_UP_ICON} from "@/libraries/icons/chevron-up.icon";
 import {CHEVRON_DOWN_ICON} from "@/libraries/icons/chevron-down.icon";
-import {NAVIGATION_MORE_ICON} from "@/libraries/icons/navigation-more.icon";
 import {INFORMATION_OUTLINE_ICON} from "@/libraries/icons/information-outline.icon";
 import {NAVIGATION_DRAG} from "@/libraries/icons/navigation_drag";
 
@@ -24,6 +24,7 @@ const ICONS = {
     arrowUp: ARROW_UP_ICON,
     arrowDown: ARROW_DOWN_ICON,
     editPencil: EDIT_PENCIL_ICON,
+    addSection: ADD_SECTION_ICON,
     cog: COG_ICON,
     close: CLOSE_ICON,
     full: FULL_ICON,

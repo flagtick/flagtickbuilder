@@ -1,8 +1,7 @@
 <template>
     <div class="add-section-container" :class="styles.COLUMNS.COL12" @click="showOption">
         <p>
-            <span v-html="$form.getIcon('addOutline', '32px', '32px', '#000')"></span>
-            <span>Add Section</span>
+            <span title="Add Section" v-html="$form.getIcon('addSection', '28px', '28px', '#f5f5f5')"></span>
         </p>
 
         <div :class="[styles.LIST_GROUP.CONTAINER, 'add-container-list']" v-show="show">

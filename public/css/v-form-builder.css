@@ -58,8 +58,8 @@
 }
 
 .vue-form-builder .add-section-container:hover {
-    border-color: #e8e8e8;
-    cursor: pointer;
+    /*border-color: #e8e8e8;*/
+    /*cursor: pointer;*/
 }
 
 .vue-form-builder .add-section-container > p {
@@ -67,7 +67,7 @@
 }
 
 .vue-form-builder .add-section-container:hover > p {
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .vue-form-builder .add-container-list {
