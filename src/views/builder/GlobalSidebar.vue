@@ -7,6 +7,7 @@
 
         <span class="fullIcon"
               @click="full"
+              v-show="isGlobalView"
               v-html="$form.getIcon('full', '20px', '20px', '#FFF')">
         </span>
 
@@ -44,6 +45,7 @@ export default {
     },
     data: () => ({
         component: null,
+        isGlobalView: true,
         dynamicData: {},
         runnerId: null,
         isOpen: false,
@@ -75,10 +77,11 @@ export default {
                 sidebarElement.style.justifyContent = 'center';
                 sidebarElement.style.transition = '0.5s';
                 sidebarElement.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.3)';
-
+                this.isGlobalView = false;
             } else {
                 this.$el.style.width = SIDEBAR_WIDTH_SIZE;
                 this.$el.style.backgroundColor = '#0473aa';
+                this.isGlobalView = true;
                 document.getElementsByTagName("body")[0].style.marginRight = SIDEBAR_WIDTH_SIZE;
             }
             this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.SIDEBAR.OPENED, runnerId)
