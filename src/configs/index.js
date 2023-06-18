@@ -4,7 +4,7 @@
  */
 
 const MAIN_CONSTANTS = {
-    COPYRIGHT: "Flagtick Builder Generation v2.1.1 - support@flagtick.com",
+    COPYRIGHT: "", /* Flagtick Builder Generation v2.1.1 - support@flagtick.com */
 }
 
 export {

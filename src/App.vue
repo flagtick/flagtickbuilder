@@ -6,7 +6,6 @@
 
         <div class="col-md-12">
             <button class="btn btn-info mr-2" @click="getData">Get JSON Form-Data (Console / Builder)</button>
-            <button class="btn btn-info mr-2" @click="setData">Set JSON Form-Data (Basic Configuration / Builder)</button>
             <button class="btn btn-info mr-2" @click="createBlank">Create Blank Form (Builder)</button>
 
             <button class="btn btn-info mr-2" @click="viewRenderer">
@@ -62,7 +61,6 @@
      */
     import FormBuilder from "@/components/FormBuilder";
     import FormRenderer from "@/components/FormRenderer";
-    import {DEMO_FORM_DATA} from "@/demo-form-data";
 
     export default {
         components: {
@@ -86,13 +84,8 @@
                 this.formData = Object.assign({})
             },
 
-            setData() {
-                this.formData = Object.assign({}, DEMO_FORM_DATA);
-            },
-
             viewRenderer() {
                 if (!this.isRenderer) {
-                    this.setData();
                     this.isRenderer = true;
                     return;
                 }

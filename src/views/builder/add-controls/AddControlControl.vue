@@ -21,8 +21,6 @@
                 type: Object,
                 required: true
             },
-
-            // TODO: Need to extend: Row too.
         },
         data: () => ({
             show: false
