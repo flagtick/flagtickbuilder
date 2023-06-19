@@ -349,6 +349,7 @@ body {
 
 .vue-form-builder .sidebar-form-configuration {
     background: white;
+    padding: 16px;
 }
 
 .vue-form-builder .sidebar-form-configuration .buttons {
