@@ -154,8 +154,6 @@ export default {
                 }
 
                 let newValue = Object.assign({}, this.section, data);
-                console.log(newValue);
-                console.log(this.section.controls);
                 this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.SECTION.UPDATE, newValue)
             },
 

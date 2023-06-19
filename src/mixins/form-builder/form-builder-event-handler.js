@@ -153,7 +153,7 @@ const FORM_BUILDER_EVENT_HANDLER = {
                     ? 'section'
                     : 'row';
                 const controlUniqueId = controlObj.uniqueId
-
+                console.log(this.formData);
                 // add controlID to section / row
                 if (type === 'section') {
                     this.formData.sections[parentId].controls.push(controlUniqueId)

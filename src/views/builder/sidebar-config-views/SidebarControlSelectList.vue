@@ -71,6 +71,7 @@
         grid-template-columns: repeat(3, 1fr);
         background-color: #fff;
         grid-gap: 20px;
+        margin: 20px;
     }
 
     .control-container-detail {
