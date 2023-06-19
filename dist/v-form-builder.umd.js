@@ -7786,9 +7786,6 @@ var SectionContainer_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var SectionContainer = (SectionContainer_component.exports);
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.is-array.js
-var es6_array_is_array = __webpack_require__("2caf");
-
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es7.symbol.async-iterator.js
 var es7_symbol_async_iterator = __webpack_require__("ac4d");
 
@@ -7816,6 +7813,9 @@ var es7_array_includes = __webpack_require__("6762");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.includes.js
 var es6_string_includes = __webpack_require__("2fdb");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.is-array.js
+var es6_array_is_array = __webpack_require__("2caf");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find-index.js
 var es6_array_find_index = __webpack_require__("20d6");
 
@@ -7832,6 +7832,7 @@ var es6_array_find = __webpack_require__("7514");
 var helper = __webpack_require__("43b3");
 
 // CONCATENATED MODULE: ./src/mixins/form-builder/form-builder-event-handler.js
+
 
 
 
@@ -8001,17 +8002,19 @@ var FORM_BUILDER_EVENT_HANDLER = {
         this.$set(this.formData.controls, controlObj.uniqueId, controlObj); // get type of the parent (section / row)
 
         var type = this.formData.sections.hasOwnProperty(parentId) ? 'section' : 'row';
-        var controlUniqueId = controlObj.uniqueId;
-        console.log(this.formData); // add controlID to section / row
+        var controlUniqueId = controlObj.uniqueId; // add controlID to section / row
 
         if (type === 'section') {
-          // this.formData.sections[parentId].controls.push(controlUniqueId)
-          if (!this.formData.sections[parentId].controls.includes(controlUniqueId)) {
-            this.formData.sections[parentId].controls.push(controlUniqueId);
+          if (this.formData.sections[parentId] && Array.isArray(this.formData.sections[parentId].controls)) {
+            if (!this.formData.sections[parentId].controls.includes(controlUniqueId)) {
+              this.formData.sections[parentId].controls.push(controlUniqueId);
+            }
           }
         } else {
-          if (!this.formData.rows[parentId].controls.includes(controlUniqueId)) {
-            this.formData.rows[parentId].controls.push(controlUniqueId);
+          if (this.formData.rows[parentId] && Array.isArray(this.formData.rows[parentId].controls)) {
+            if (!this.formData.rows[parentId].controls.includes(controlUniqueId)) {
+              this.formData.rows[parentId].controls.push(controlUniqueId);
+            }
           }
         }
       }
@@ -8412,12 +8415,12 @@ var FormConfiguration_component = Object(componentNormalizer["a" /* default */])
 )
 
 /* harmony default export */ var FormConfiguration = (FormConfiguration_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6a06d990-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/builder/GlobalSidebar.vue?vue&type=template&id=70f3d576&
-var GlobalSidebarvue_type_template_id_70f3d576_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"sidebar-builder"},[_c('span',{staticClass:"closeIcon",domProps:{"innerHTML":_vm._s(_vm.$form.getIcon('close', '20px', '20px', '#FFF'))},on:{"click":_vm.close}}),_c('span',{directives:[{name:"show",rawName:"v-show",value:(_vm.isGlobalView),expression:"isGlobalView"}],staticClass:"fullIcon",domProps:{"innerHTML":_vm._s(_vm.$form.getIcon('full', '20px', '20px', '#FFF'))},on:{"click":_vm.full}}),(_vm.component)?_c(_vm.component,{tag:"component",attrs:{"dataPackage":_vm.dynamicData,"formData":_vm.formData,"permissions":_vm.permissions},on:{"save":_vm.save,"saveAndClose":_vm.saveAndClose,"close":_vm.close}}):_vm._e()],1)}
-var GlobalSidebarvue_type_template_id_70f3d576_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6a06d990-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/builder/GlobalSidebar.vue?vue&type=template&id=40de4938&
+var GlobalSidebarvue_type_template_id_40de4938_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"sidebar-builder"},[_c('span',{staticClass:"closeIcon",domProps:{"innerHTML":_vm._s(_vm.$form.getIcon('close', '20px', '20px', '#FFF'))},on:{"click":_vm.close}}),_c('span',{directives:[{name:"show",rawName:"v-show",value:(_vm.isGlobalView),expression:"isGlobalView"}],staticClass:"fullIcon",domProps:{"innerHTML":_vm._s(_vm.$form.getIcon('full', '20px', '20px', '#FFF'))},on:{"click":_vm.full}}),(_vm.component)?_c(_vm.component,{tag:"component",attrs:{"dataPackage":_vm.dynamicData,"formData":_vm.formData,"permissions":_vm.permissions},on:{"save":_vm.save,"saveAndClose":_vm.saveAndClose,"close":_vm.close}}):_vm._e()],1)}
+var GlobalSidebarvue_type_template_id_40de4938_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/builder/GlobalSidebar.vue?vue&type=template&id=70f3d576&
+// CONCATENATED MODULE: ./src/views/builder/GlobalSidebar.vue?vue&type=template&id=40de4938&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/builder/GlobalSidebar.vue?vue&type=script&lang=js&
 
@@ -8525,8 +8528,6 @@ var SIDEBAR_FULL_SCREEN = "100%";
      */
     saveAndClose: function saveAndClose() {
       var specialData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      console.log("C");
-      console.log(specialData);
       this.$formEvent.$emit(events["a" /* EVENT_CONSTANTS */].BUILDER.SIDEBAR.SAVE_AND_CLOSE, this.runnerId, Object.assign({}, specialData));
       this.close();
     },
@@ -8611,8 +8612,8 @@ var SIDEBAR_FULL_SCREEN = "100%";
 
 var GlobalSidebar_component = Object(componentNormalizer["a" /* default */])(
   builder_GlobalSidebarvue_type_script_lang_js_,
-  GlobalSidebarvue_type_template_id_70f3d576_render,
-  GlobalSidebarvue_type_template_id_70f3d576_staticRenderFns,
+  GlobalSidebarvue_type_template_id_40de4938_render,
+  GlobalSidebarvue_type_template_id_40de4938_staticRenderFns,
   false,
   null,
   null,

@@ -104,8 +104,6 @@ export default {
          * Save event with close the right sidebar
          */
         saveAndClose(specialData = {}) {
-            console.log("C");
-            console.log(specialData);
             this.$formEvent.$emit(
                 EVENT_CONSTANTS.BUILDER.SIDEBAR.SAVE_AND_CLOSE,
                 this.runnerId,
