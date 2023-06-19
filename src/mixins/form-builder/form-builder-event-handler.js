@@ -156,9 +156,14 @@ const FORM_BUILDER_EVENT_HANDLER = {
                 console.log(this.formData);
                 // add controlID to section / row
                 if (type === 'section') {
-                    this.formData.sections[parentId].controls.push(controlUniqueId)
+                    // this.formData.sections[parentId].controls.push(controlUniqueId)
+                    if (!this.formData.sections[parentId].controls.includes(controlUniqueId)) {
+                        this.formData.sections[parentId].controls.push(controlUniqueId);
+                    }
                 } else {
-                    this.formData.rows[parentId].controls.push(controlUniqueId)
+                    if (!this.formData.rows[parentId].controls.includes(controlUniqueId)) {
+                        this.formData.rows[parentId].controls.push(controlUniqueId);
+                    }
                 }
             }
         },
