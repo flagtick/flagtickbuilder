@@ -4,6 +4,7 @@
             <label>Text for Text-Block</label>
             <div id="app">
                 <vue-editor useCustomImageHandler @image-added="handleImageAdded"
+                            contenteditable="false"
                             class="flagtick-vue2-editor"
                             v-model="control.text">
                 </vue-editor>
@@ -21,6 +22,14 @@
         mixins: [CONTROL_SPECIAL_CONFIG_MIXIN],
         components: {
             VueEditor
+        },
+        mounted() {
+            this.$nextTick(() => {
+                const editor = document.querySelector('.ql-container .ql-editor');
+                if (editor) {
+                    editor.setAttribute('contenteditable', 'false');
+                }
+            });
         },
         methods : {
             handleImageAdded: function(file, Editor, cursorLocation, resetUploader) {
