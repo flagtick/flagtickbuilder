@@ -5,7 +5,6 @@
             <p :class="section.subHeadlineAdditionalClass" v-text="section.subHeadline"></p>
         </div>
 
-        <!--- SHOW CONTROLS WITH SORTABLE --->
         <draggable
                 :class="draggableClasses"
                 ghost-class="ghost"
@@ -27,7 +26,6 @@
             </p>
         </draggable>
 
-        <!-- Add Control -->
         <AddControlControl
             v-if="permissions.canAddControl"
             :section="section"

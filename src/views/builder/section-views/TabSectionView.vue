@@ -39,10 +39,6 @@
 
             </draggable>
 
-<!--            <div class="slider" v-show="hasTabs > 0">-->
-<!--                <div class="indicator"></div>-->
-<!--            </div>-->
-
             <div class="content">
                 <TabContentRowView
                     v-for="rowId in section.rows"
@@ -97,23 +93,17 @@
                 return 'tab-header-'.concat(uniqueId)
             },
 
-            /**
-             * [ACTION] Add a new tab action
-             * Buss: simply add a new row with extendData
-             */
             addNewTab(sectionId : string) {
                 // @ts-ignore
                 if (sectionId !== this.section.uniqueId) {
                     return;
                 }
 
-                // Ask for Tab Name - TODO: do something better with Promise so it wouldn't harm the main thread
                 const tabName = prompt("Give it a name for your new tab")
                 if (!tabName) {
                     return ALERT_DIALOG.show("Tab Name can't be empty.");
                 }
 
-                // Data preparation
                 const tabDetail : TabRow = {
                     tabName,
                     defaultChecked: (
@@ -125,18 +115,14 @@
                 // @ts-ignore
                 this.addRow(null, tabDetail)
 
-                // if we got our-first ever tab, re-selected the first tab.
-                // @ts-ignore - check if this is the first tab in our section??
+                // @ts-ignore
                 if (this.section.rows.length == 1) {
                     this.defaultSelectTab()
                 }
             },
 
-            /**
-             * [UI-Update]
-             */
             defaultSelectTab() {
-                // @ts-ignore (don't know why but need to ignore to use nextTick)
+                // @ts-ignore
                 this.$nextTick(() => {
                     // @ts-ignore
                     const radioDom = document.getElementById(this.getRadioID(this.section.rows[0]))

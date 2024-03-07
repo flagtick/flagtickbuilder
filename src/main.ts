@@ -13,7 +13,7 @@ import {IRegisterProperties} from "@/interfaces/register-properties.interface";
 Vue.config.productionTip = false
 
 const configOptions : IRegisterProperties = {
-  disableControls: [], // ['input', 'number']
+  disableControls: [],
   globalInjection: true,
   validationErrorShowAlert: true,
   validationErrorAlertText: "Please check the error messages and solve it."

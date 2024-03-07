@@ -7,7 +7,6 @@
 
         <div class="table-wrapper">
             <table :class="styles.TABLE.TABLE_CLASS">
-                <!--- TODO: Sortable --->
 
                 <TableRowView v-for="(rowId) in section.rows"
                               :key="rowId"

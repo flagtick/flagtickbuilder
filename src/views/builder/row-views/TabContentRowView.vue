@@ -9,7 +9,6 @@
             </button>
         </div>
 
-        <!--- SHOW CONTROLS WITH SORTABLE --->
         <draggable
             :class="draggableClasses"
             ghost-class="ghost"
@@ -32,7 +31,6 @@
             </p>
         </draggable>
 
-        <!-- Add Control -->
         <AddControlToRowControl
             v-if="permissions.canAddControl"
             :row="row"
@@ -93,8 +91,6 @@
                 if (this.row.uniqueId !== runnerId) {
                     return
                 }
-
-                // render sidebar and turn on the border
                 this.renderModal()
             },
 
@@ -123,7 +119,6 @@
              * @param {Object} data
              */
             saveConfiguration(runnerId : string, data : any) {
-                // does it out of scope? if it does, stop
                 // @ts-ignore
                 if (runnerId !== this.row.uniqueId) {
                     return
@@ -141,7 +136,6 @@
              * @param data
              */
             saveAndClose(runnerId : string, data : any) {
-                // does it out of scope? if it does, stop
                 // @ts-ignore
                 if (runnerId !== this.row.uniqueId) {
                     return
@@ -150,16 +144,12 @@
                 this.saveConfiguration(runnerId, data)
             },
 
-            /**
-             * After Sidebar closed => Remove the Active Class
-             */
             removeActive() {
-                this.$emit('active', false) // call to parent to let it know this section is finished edit
+                this.$emit('active', false)
             }
         },
 
         created() {
-            // listen to after-closed from GlobalSidebar
             // @ts-ignore
             this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.MODAL.SAVE, this.saveConfiguration)
             // @ts-ignore

@@ -30,16 +30,10 @@
             permissions: Object
         },
         methods: {
-            /**
-             * Emit to parent to delete this control...
-             */
             clickedDelete() {
                 this.$emit('delete', true)
             },
 
-            /**
-             * Emit to parent to open the configuration
-             */
             clickedConfiguration() {
                 this.$emit('config', true)
             }

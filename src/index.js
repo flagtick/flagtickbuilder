@@ -6,17 +6,10 @@ import BaseControlConfigSkeleton from "@/skeletons/controls/BaseControlConfigSke
 
 import '@/assets/v-form-builder.css'
 
-// Create module definition for Vue.use()
 const VueFormBuilderPlugin = {
     install: VueFormBuilderInstaller
 };
 
-// For Browser-Vue's purpose
-// Export the VueFormBuilderPlugin to let developers register it later.
-// I won't automatically register it, therefore you would have a big chance to
-// - Configure the Internal Configuration of the Form
-// - Extendable (Registering more controls, Styling Classes,...)
-// - ...
 if (typeof window !== 'undefined') {
     window.VueFormBuilderPlugin = VueFormBuilderPlugin
 } else if (typeof global !== 'undefined') {
@@ -26,11 +19,9 @@ if (typeof window !== 'undefined') {
 export {
     VueFormBuilderPlugin,
 
-    // Main Component for Node
     FormBuilder,
     FormRenderer,
 
-    // For Vue.extend
     BaseControlSkeleton,
     BaseControlConfigSkeleton
 }

@@ -53,9 +53,6 @@
 </template>
 
 <script>
-    /**
-     * NOTE - This file only exists for development purpose.
-     */
     import FormBuilder from "@/components/FormBuilder";
     import FormRenderer from "@/components/FormRenderer";
 

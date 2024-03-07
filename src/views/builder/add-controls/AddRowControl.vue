@@ -8,7 +8,6 @@
 </template>
 
 <script>
-    import {STYLES} from "@/configs/styles";
     import {STYLE_INJECTION_MIXIN} from "@/mixins/style-injection-mixin";
 
     export default {
@@ -18,9 +17,6 @@
             show: false
         }),
         methods:{
-            /**
-             * Add a new row by notify the parent...
-             */
             addNew() {
                 this.$emit('addRowNotify', true)
             }

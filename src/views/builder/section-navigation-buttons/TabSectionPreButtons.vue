@@ -28,7 +28,7 @@
 
         methods: {
             addNewTab() : void {
-                // @ts-ignore - trigger to TabSectionView
+                // @ts-ignore
                 this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.ROW.ADD_TAB, this.section.uniqueId);
             }
         }

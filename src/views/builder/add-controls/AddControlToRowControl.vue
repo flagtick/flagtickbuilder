@@ -60,13 +60,10 @@
              * After user chose a control. This will be invoked in order to create a new control
              */
             createNewControlForSection(runnerId, controlObj) {
-                // runnerId to check the right identifier of the Invoker
-                // uniqueId to check if we create new control or not
                 if (this.runnerId !== runnerId) {
                     return
                 }
 
-                // emit to FormBuilder and let it create control...
                 this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.CONTROL.CREATE, this.row.uniqueId, controlObj)
             }
         },
@@ -82,7 +79,6 @@
         },
 
         created() {
-            // listen to Global Sidebar
             this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.OPENED, this.afterOpenedSidebar)
             this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.SAVE_AND_CLOSE, this.createNewControlForSection)
         },
