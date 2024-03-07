@@ -50,7 +50,6 @@
                     return
                 }
 
-                // create
                 this.newControlData = createControlData(controlKey)
                 this.save(true)
             }

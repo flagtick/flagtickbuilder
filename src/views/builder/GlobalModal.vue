@@ -56,28 +56,18 @@
             modalTitle: "",
         }),
         methods: {
-            /**
-             * Open the Right Sidebar
-             */
             open(runnerId) {
                 if (this.isOpen) {
                     ALERT_DIALOG.show('Please close the current active modal before open another')
                     return
                 }
 
-                // set size
                 this.$el.style.display = "block";
 
-                // turn on flag and notify watcher that sidebar is opened
-                // `runnerId` will be sent back in order to make sure other components will touch yours
                 this.$formEvent.$emit(MODAL_EVENT.OPENED, runnerId)
                 this.isOpen = true
             },
 
-            /**
-             * Save - Emitting data to the listener but do not close the sidebar
-             * @hook Emit Data to the Listener
-             */
             save(specialData = {}) {
                 this.$formEvent.$emit(
                     MODAL_EVENT.SAVE,
@@ -86,9 +76,6 @@
                 )
             },
 
-            /**
-             * Save event with close the right sidebar
-             */
             saveAndClose(specialData = {}) {
                 this.$formEvent.$emit(
                     MODAL_EVENT.SAVE_AND_CLOSE,
@@ -99,32 +86,21 @@
                 this.close()
             },
 
-            /**
-             * Close the right sidebar
-             * @hook After Closed - Fire an Event to notify (maybe someone will listen :v )
-             */
             close() {
                 this.$el.style.display = "none"
 
-                // fire event after closed (if emit == true)
                 this.$formEvent.$emit(
                     MODAL_EVENT.AFTER_CLOSED,
                     this.runnerId,
                     null
                 )
 
-                // remove renderer
                 this.component = null
                 this.dynamicData = {}
                 this.runnerId = null
                 this.isOpen = false
             },
 
-            /**
-             * This method will help us inject our Component into the Sidebar Body
-             * @param {SidebarRenderer} rendererInfo - data that will be assigned for the Component
-             * @param {String} title Modal Title
-             */
             updateBody(rendererInfo, title = "") {
                 if (this.isOpen) {
                     return
@@ -138,10 +114,7 @@
         },
 
         created() {
-            // listen to render even
             this.$formEvent.$on(MODAL_EVENT.INJECT, this.updateBody)
-
-            // listen to open
             this.$formEvent.$on(MODAL_EVENT.OPEN, this.open)
         }
     }

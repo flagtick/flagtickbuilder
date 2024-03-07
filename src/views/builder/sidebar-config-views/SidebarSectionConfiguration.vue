@@ -63,7 +63,6 @@
         }),
 
         created() {
-            // retrieve the data from `GlobalSidebar` passed in
             this.sectionConfiguration = Object.assign({}, this.sectionConfiguration, this.dataPackage)
         }
     }

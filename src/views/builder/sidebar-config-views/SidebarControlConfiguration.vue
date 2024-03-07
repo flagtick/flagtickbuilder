@@ -2,7 +2,6 @@
     <div class="sidebar-form-configuration">
         <h5>Control Configuration</h5>
 
-        <!-- Basic of the control/Same for all -->
         <ControlBasicInformation
             v-if="permissions.canUpdateControlBasicDetail"
             :control="control"
@@ -13,7 +12,6 @@
             :control="control"
         />
 
-        <!-- Control specific configuration / Only render it if the control has specific configuration view -->
         <SidebarToggleableContainer
                 v-if="specificConfigurationView && permissions.canUpdateControlSpecialConfiguration"
                 headline="Control Specific Configuration"
@@ -25,7 +23,6 @@
             />
         </SidebarToggleableContainer>
 
-        <!-- Validation of the control / same for all -->
         <ControlValidationInformation
             v-if="!isValidationDisabled && permissions.canUpdateControlValidation"
             :control="control"
@@ -75,7 +72,6 @@
         }),
 
         created() {
-            // clone to make sure, no references will interrupt the configuration...
             this.control = HELPER.cloneDeep(this.dataPackage)
         },
 
@@ -109,7 +105,6 @@
                     return null
                 }
 
-                // NOTE: this is a hash map access , not 2d array =))
                 return CONTROLS[this.controlType]['configComponent'];
             }
         },

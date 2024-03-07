@@ -54,10 +54,7 @@ export default {
     },
     mixins: [STYLE_INJECTION_MIXIN],
     props: {
-        // main data
         items: Array,
-
-        // configurable texts
         blockTitle: String,
         title: String,
         keyTitle: String,

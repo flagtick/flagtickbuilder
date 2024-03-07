@@ -87,16 +87,11 @@
         name: "SidebarFormConfiguration",
         mixins: [STYLE_INJECTION_MIXIN, SIDEBAR_BODY_MIXIN],
         data: () => ({
-            // OVERRIDE IT FROM `SIDEBAR_BODY_MIXIN`
             dataKey: "formConfiguration",
             formConfiguration: Object.assign({}, FORM_DEFAULT_DATA),
         }),
 
         methods: {
-            /**
-             * Pre-Form-Validation
-             * @return {String}
-             */
             preSaveValidation() {
                 if (this.formConfiguration.enableServerSideValidation && !this.formConfiguration.serverSideValidationEndpoint) {
                     return "You must include the Server-side Validation Endpoint";
@@ -107,7 +102,6 @@
         },
 
         created() {
-            // retrieve the data from `GlobalSidebar` passed in
             this.formConfiguration = Object.assign({}, this.formConfiguration, this.dataPackage)
         }
     }
