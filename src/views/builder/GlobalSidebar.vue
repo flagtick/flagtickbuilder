@@ -68,7 +68,7 @@ export default {
                 sidebarElement.style.width = '80%';
                 sidebarElement.style.margin = '48px 10% 10% 10%';
                 sidebarElement.style.position = 'fixed';
-                sidebarElement.style.zIndex = '111';
+                sidebarElement.style.zIndex = '1111';
                 sidebarElement.style.top = '0';
                 sidebarElement.style.left = '0';
                 sidebarElement.style.backgroundColor = '#0473aa';

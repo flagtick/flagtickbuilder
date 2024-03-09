@@ -8368,12 +8368,12 @@ var FormConfiguration_component = Object(componentNormalizer["a" /* default */])
 )
 
 /* harmony default export */ var FormConfiguration = (FormConfiguration_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6a06d990-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/builder/GlobalSidebar.vue?vue&type=template&id=40de4938&
-var GlobalSidebarvue_type_template_id_40de4938_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"sidebar-builder"},[_c('span',{staticClass:"closeIcon",domProps:{"innerHTML":_vm._s(_vm.$form.getIcon('close', '20px', '20px', '#FFF'))},on:{"click":_vm.close}}),_c('span',{directives:[{name:"show",rawName:"v-show",value:(_vm.isGlobalView),expression:"isGlobalView"}],staticClass:"fullIcon",domProps:{"innerHTML":_vm._s(_vm.$form.getIcon('full', '20px', '20px', '#FFF'))},on:{"click":_vm.full}}),(_vm.component)?_c(_vm.component,{tag:"component",attrs:{"dataPackage":_vm.dynamicData,"formData":_vm.formData,"permissions":_vm.permissions},on:{"save":_vm.save,"saveAndClose":_vm.saveAndClose,"close":_vm.close}}):_vm._e()],1)}
-var GlobalSidebarvue_type_template_id_40de4938_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6a06d990-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/builder/GlobalSidebar.vue?vue&type=template&id=01e4312a&
+var GlobalSidebarvue_type_template_id_01e4312a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"sidebar-builder"},[_c('span',{staticClass:"closeIcon",domProps:{"innerHTML":_vm._s(_vm.$form.getIcon('close', '20px', '20px', '#FFF'))},on:{"click":_vm.close}}),_c('span',{directives:[{name:"show",rawName:"v-show",value:(_vm.isGlobalView),expression:"isGlobalView"}],staticClass:"fullIcon",domProps:{"innerHTML":_vm._s(_vm.$form.getIcon('full', '20px', '20px', '#FFF'))},on:{"click":_vm.full}}),(_vm.component)?_c(_vm.component,{tag:"component",attrs:{"dataPackage":_vm.dynamicData,"formData":_vm.formData,"permissions":_vm.permissions},on:{"save":_vm.save,"saveAndClose":_vm.saveAndClose,"close":_vm.close}}):_vm._e()],1)}
+var GlobalSidebarvue_type_template_id_01e4312a_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/builder/GlobalSidebar.vue?vue&type=template&id=40de4938&
+// CONCATENATED MODULE: ./src/views/builder/GlobalSidebar.vue?vue&type=template&id=01e4312a&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/builder/GlobalSidebar.vue?vue&type=script&lang=js&
 
@@ -8446,7 +8446,7 @@ var SIDEBAR_FULL_SCREEN = "100%";
         sidebarElement.style.width = '80%';
         sidebarElement.style.margin = '48px 10% 10% 10%';
         sidebarElement.style.position = 'fixed';
-        sidebarElement.style.zIndex = '111';
+        sidebarElement.style.zIndex = '1111';
         sidebarElement.style.top = '0';
         sidebarElement.style.left = '0';
         sidebarElement.style.backgroundColor = '#0473aa';
@@ -8565,8 +8565,8 @@ var SIDEBAR_FULL_SCREEN = "100%";
 
 var GlobalSidebar_component = Object(componentNormalizer["a" /* default */])(
   builder_GlobalSidebarvue_type_script_lang_js_,
-  GlobalSidebarvue_type_template_id_40de4938_render,
-  GlobalSidebarvue_type_template_id_40de4938_staticRenderFns,
+  GlobalSidebarvue_type_template_id_01e4312a_render,
+  GlobalSidebarvue_type_template_id_01e4312a_staticRenderFns,
   false,
   null,
   null,
