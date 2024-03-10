@@ -3,10 +3,12 @@
         <div :class="styles.FORM.FORM_GROUP">
             <label>Text for Text-Block</label>
             <div id="app">
-                <vue-editor useCustomImageHandler @image-added="handleImageAdded"
-                            contenteditable="false"
-                            class="flagtick-vue2-editor"
-                            v-model="control.text">
+                <vue-editor useCustomImageHandler
+                    @image-added="handleImageAdded"
+                    contenteditable="false"
+                    @text-change="textChangeMode"
+                    class="flagtick-vue2-editor"
+                    v-model="control.text">
                 </vue-editor>
             </div>
         </div>
@@ -24,14 +26,30 @@
             VueEditor
         },
         mounted() {
+            let scope = this;
             this.$nextTick(() => {
-                const editor = document.querySelector('.ql-container .ql-editor');
-                if (editor) {
-                    editor.setAttribute('contenteditable', 'false');
-                }
+                scope.modifyEditorMode('true');
             });
         },
         methods : {
+            modifyEditorMode(bool) {
+                const editor = document.querySelector('.ql-container .ql-editor');
+                if (editor) {
+                    editor.setAttribute('contenteditable', bool);
+                }
+            },
+            textChangeMode() {
+                let scope = this;
+                const editor = document.querySelector('.ql-container .ql-editor');
+                if (editor) {
+                    editor.addEventListener('mouseenter', function() {
+                        scope.modifyEditorMode('true');
+                    });
+                    editor.addEventListener('mouseleave', function() {
+                        scope.modifyEditorMode('false');
+                    });
+                }
+            },
             handleImageAdded: function(file, Editor, cursorLocation, resetUploader) {
                 const formData = new FormData();
                 formData.append("file", file);

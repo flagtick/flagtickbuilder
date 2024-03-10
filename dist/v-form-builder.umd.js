@@ -10909,17 +10909,19 @@ var TextBlockConfigView_component = Object(componentNormalizer["a" /* default */
 )
 
 /* harmony default export */ var TextBlockConfigView = (TextBlockConfigView_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6a06d990-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/control-configs/TextHTMLConfigView.vue?vue&type=template&id=b47cb504&
-var TextHTMLConfigViewvue_type_template_id_b47cb504_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{class:_vm.styles.FORM.FORM_GROUP},[_c('label',[_vm._v("Text for Text-Block")]),_c('div',{attrs:{"id":"app"}},[_c('vue-editor',{staticClass:"flagtick-vue2-editor",attrs:{"useCustomImageHandler":"","contenteditable":"false"},on:{"image-added":_vm.handleImageAdded},model:{value:(_vm.control.text),callback:function ($$v) {_vm.$set(_vm.control, "text", $$v)},expression:"control.text"}})],1)])])}
-var TextHTMLConfigViewvue_type_template_id_b47cb504_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6a06d990-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/control-configs/TextHTMLConfigView.vue?vue&type=template&id=7035b8e2&
+var TextHTMLConfigViewvue_type_template_id_7035b8e2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{class:_vm.styles.FORM.FORM_GROUP},[_c('label',[_vm._v("Text for Text-Block")]),_c('div',{attrs:{"id":"app"}},[_c('vue-editor',{staticClass:"flagtick-vue2-editor",attrs:{"useCustomImageHandler":"","contenteditable":"false"},on:{"image-added":_vm.handleImageAdded,"text-change":_vm.textChangeMode},model:{value:(_vm.control.text),callback:function ($$v) {_vm.$set(_vm.control, "text", $$v)},expression:"control.text"}})],1)])])}
+var TextHTMLConfigViewvue_type_template_id_7035b8e2_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/control-configs/TextHTMLConfigView.vue?vue&type=template&id=b47cb504&
+// CONCATENATED MODULE: ./src/views/control-configs/TextHTMLConfigView.vue?vue&type=template&id=7035b8e2&
 
 // EXTERNAL MODULE: ./node_modules/vue2-editor/dist/vue2-editor.esm.js
 var vue2_editor_esm = __webpack_require__("5873");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/control-configs/TextHTMLConfigView.vue?vue&type=script&lang=js&
+//
+//
 //
 //
 //
@@ -10944,15 +10946,32 @@ var vue2_editor_esm = __webpack_require__("5873");
     VueEditor: vue2_editor_esm["a" /* VueEditor */]
   },
   mounted: function mounted() {
+    var scope = this;
     this.$nextTick(function () {
-      var editor = document.querySelector('.ql-container .ql-editor');
-
-      if (editor) {
-        editor.setAttribute('contenteditable', 'false');
-      }
+      scope.modifyEditorMode('true');
     });
   },
   methods: {
+    modifyEditorMode: function modifyEditorMode(bool) {
+      var editor = document.querySelector('.ql-container .ql-editor');
+
+      if (editor) {
+        editor.setAttribute('contenteditable', bool);
+      }
+    },
+    textChangeMode: function textChangeMode() {
+      var scope = this;
+      var editor = document.querySelector('.ql-container .ql-editor');
+
+      if (editor) {
+        editor.addEventListener('mouseenter', function () {
+          scope.modifyEditorMode('true');
+        });
+        editor.addEventListener('mouseleave', function () {
+          scope.modifyEditorMode('false');
+        });
+      }
+    },
     handleImageAdded: function handleImageAdded(file, Editor, cursorLocation, resetUploader) {
       var formData = new FormData();
       formData.append("file", file);
@@ -10983,8 +11002,8 @@ var vue2_editor_esm = __webpack_require__("5873");
 
 var TextHTMLConfigView_component = Object(componentNormalizer["a" /* default */])(
   control_configs_TextHTMLConfigViewvue_type_script_lang_js_,
-  TextHTMLConfigViewvue_type_template_id_b47cb504_render,
-  TextHTMLConfigViewvue_type_template_id_b47cb504_staticRenderFns,
+  TextHTMLConfigViewvue_type_template_id_7035b8e2_render,
+  TextHTMLConfigViewvue_type_template_id_7035b8e2_staticRenderFns,
   false,
   null,
   null,
